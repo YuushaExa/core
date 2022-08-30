@@ -49,14 +49,23 @@
             script.onload = resolve;
         })
     }
-    if ('undefined' != typeof EJS_DEBUG_XX && true === EJS_DEBUG_XX) {
-        await loadStyle('emu-css.css');
-        await loadScript('emu-main.js');
-        await loadScript('emulator.js');
+  if ('undefined' != typeof EJS_DEBUG_XX && true === EJS_DEBUG_XX) {
+        await loadStyle('https://yuushaexa.github.io/core/data/emu-css.css');
+        await loadScript('https://yuushaexa.github.io/core/data/emu-main.js');
+        await loadScript('https://yuushaexa.github.io/core/data/emulator.js');
     } else {
-        await loadStyle('emu-css.min.css');
-        await loadScript('emulator.min.js');
-    }
+        await loadStyle('https://yuushaexa.github.io/core/data/emu-css.min.css');
+        await loadScript('https://yuushaexa.github.io/core/data/emulator.min.js');
+    };
+        EJS_paths = {
+    'v.json' : 'https://yuushaexa.github.io/core/data/v.json',
+    'extract7z.js' : 'https://yuushaexa.github.io/core/data/extract7z.js',
+                 'extractzip.js' : 'https://yuushaexa.github.io/core/data/extractzip.js',
+            'snes-wasm.data' : 'https://yuushaexa.github.io/core/data/cores/snes-wasm.data',
+            'nes-wasm.data' : 'https://yuushaexa.github.io/core/data/cores/nes-wasm.data',
+            'gb-wasm.data' : 'https://yuushaexa.github.io/core/data/cores/gb-wasm.data',
+            'snes-old-wasm.data' : 'https://yuushaexa.github.io/core/data/old/snes-old-wasm.data'
+        };
     let config = {};
     config.gameUrl = EJS_gameUrl;
     'undefined' != typeof EJS_mameCore && (config.mameCore = EJS_mameCore);
